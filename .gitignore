@@ -1,0 +1,23 @@
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+*.wasm.bak
+*.wat.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+
+.playwright-mcp
