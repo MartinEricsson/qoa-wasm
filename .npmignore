@@ -1,0 +1,39 @@
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+test/
+*.test.js
+
+# Build scripts (not needed for consumers)
+scripts/
+
+# Development dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Git files
+.git/
+.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Development server files
+index.html
+
+# Backup files
+*.bak
+*.tmp
+*.log
+
+# Source WAT file (keep only the compiled WASM)
+src/qoa-decoder.wat
+
+# Playwright
+.playwright-mcp
