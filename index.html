@@ -11,171 +11,202 @@
       box-sizing: border-box;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f5f5;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
+      color: #2c2c2c;
     }
     .container {
       background: white;
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 600px;
+      border-radius: 2px;
+      padding: 60px 50px;
+      max-width: 700px;
       width: 100%;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
     h1 {
-      color: #333;
-      margin-bottom: 10px;
-      font-size: 32px;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
     }
     .subtitle {
-      color: #666;
-      margin-bottom: 30px;
-      font-size: 14px;
+      color: #787878;
+      margin-bottom: 40px;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
     .drop-zone {
-      border: 3px dashed #ccc;
-      border-radius: 10px;
-      padding: 40px;
+      border: 1px solid #d8d8d8;
+      border-radius: 1px;
+      padding: 50px 40px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s ease;
-      background: #f9f9f9;
+      transition: all 0.2s ease;
+      background: #fafafa;
     }
     .drop-zone:hover {
-      border-color: #667eea;
-      background: #f0f0ff;
+      border-color: #2c2c2c;
+      background: #f8f8f8;
     }
     .drop-zone.active {
-      border-color: #667eea;
-      background: #e8ebff;
+      border-color: #2c2c2c;
+      background: #f0f0f0;
     }
     .drop-zone-icon {
-      font-size: 64px;
-      margin-bottom: 20px;
+      display: none;
     }
     .drop-zone-text {
-      color: #666;
-      font-size: 16px;
+      color: #787878;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+    .drop-zone-text strong {
+      color: #2c2c2c;
+      font-weight: 400;
     }
     #fileInput {
       display: none;
     }
     .player {
       display: none;
-      margin-top: 30px;
-      padding: 20px;
-      background: #f5f5f5;
-      border-radius: 10px;
+      margin-top: 40px;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
     }
     .player.active {
       display: block;
     }
     .player-info {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      border-top: 1px solid #e8e8e8;
+      padding-top: 20px;
     }
     .info-row {
       display: flex;
       justify-content: space-between;
-      margin: 10px 0;
-      padding: 8px;
-      background: white;
-      border-radius: 5px;
+      margin: 0;
+      padding: 12px 0;
+      background: transparent;
+      border-radius: 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .info-row:last-child {
+      border-bottom: none;
     }
     .info-label {
-      font-weight: bold;
-      color: #666;
+      font-weight: 300;
+      color: #787878;
+      font-size: 13px;
+      letter-spacing: 0.3px;
     }
     .info-value {
-      color: #333;
+      color: #2c2c2c;
+      font-size: 13px;
+      font-weight: 400;
     }
     .controls {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       justify-content: center;
       align-items: center;
     }
     button {
-      background: #667eea;
+      background: #2c2c2c;
       color: white;
       border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 11px 20px;
+      border-radius: 1px;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0;
     }
     button:hover {
-      background: #5568d3;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      background: #1a1a1a;
+      transform: none;
+      box-shadow: none;
     }
     button:active {
-      transform: translateY(0);
+      background: #0a0a0a;
     }
     button:disabled {
-      background: #ccc;
+      background: #d8d8d8;
+      color: #a0a0a0;
       cursor: not-allowed;
       transform: none;
     }
     .progress-bar {
       width: 100%;
-      height: 6px;
-      background: #ddd;
-      border-radius: 3px;
-      margin: 15px 0;
+      height: 2px;
+      background: #e8e8e8;
+      border-radius: 0;
+      margin: 20px 0;
       overflow: hidden;
       cursor: pointer;
     }
     .progress-fill {
       height: 100%;
-      background: #667eea;
-      border-radius: 3px;
+      background: #2c2c2c;
+      border-radius: 0;
       width: 0%;
       transition: width 0.1s ease;
     }
     .time-display {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 15px;
+      font-size: 11px;
+      color: #787878;
+      margin-bottom: 20px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
     .status {
       text-align: center;
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 14px;
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 1px;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
     .status.loading {
-      background: #fff3cd;
-      color: #856404;
+      background: #f5f5f5;
+      color: #2c2c2c;
+      border: 1px solid #e8e8e8;
     }
     .status.success {
-      background: #d4edda;
-      color: #155724;
+      background: #f5f5f5;
+      color: #2c2c2c;
+      border: 1px solid #e8e8e8;
     }
     .status.error {
-      background: #f8d7da;
-      color: #721c24;
+      background: #fafafa;
+      color: #2c2c2c;
+      border: 1px solid #d8d8d8;
     }
     .waveform {
       width: 100%;
-      height: 80px;
-      background: white;
-      border-radius: 5px;
-      margin: 15px 0;
+      height: 100px;
+      background: #fafafa;
+      border-radius: 0;
+      margin: 25px 0;
       position: relative;
       overflow: hidden;
+      border: 1px solid #e8e8e8;
     }
     .waveform canvas {
       width: 100%;
@@ -185,11 +216,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>🎵 QOA Decoder Demo</h1>
-    <div class="subtitle">Decode and play Quite OK Audio files in your browser</div>
+    <h1>QOA Decoder</h1>
+    <div class="subtitle">Decode and play Quite OK Audio files</div>
     
     <div class="drop-zone" id="dropZone">
-      <div class="drop-zone-icon">🎵</div>
       <div class="drop-zone-text">
         <strong>Drop a .qoa file here</strong><br>
         or click to browse
@@ -239,10 +269,10 @@
       </div>
       
       <div class="controls">
-        <button id="playBtn">▶️ Play</button>
-        <button id="pauseBtn" style="display: none;">⏸️ Pause</button>
-        <button id="stopBtn">⏹️ Stop</button>
-        <button id="loadNewBtn">📁 Load New</button>
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn" style="display: none;">Pause</button>
+        <button id="stopBtn">Stop</button>
+        <button id="loadNewBtn">Load New</button>
       </div>
     </div>
     
@@ -541,11 +571,11 @@
       const step = Math.ceil(data.length / canvas.width);
       const amp = canvas.height / 2;
       
-      ctx.fillStyle = '#f5f5f5';
+      ctx.fillStyle = '#fafafa';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       ctx.beginPath();
-      ctx.strokeStyle = '#667eea';
+      ctx.strokeStyle = '#2c2c2c';
       ctx.lineWidth = 1;
       
       for (let i = 0; i < canvas.width; i++) {
