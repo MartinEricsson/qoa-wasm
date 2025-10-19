@@ -1,0 +1,25 @@
+{
+  "name": "qoa-wasm",
+  "version": "0.1.0",
+  "description": "A WebAssembly implementation of the QOA audio decoder",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/compile-wasm.js",
+    "postbuild": "npx -y wasm-opt -Oz --enable-simd --enable-multivalue --strip-dwarf --strip-producers -o src/qoa-decoder.wasm src/qoa-decoder.wasm && node scripts/report-size.js",
+    "serve": "http-server -p 8080 -o",
+    "dev": "http-server -p 8080",
+    "test": "node test/test-regression.js",
+    "test:basic": "node test/test-node.js",
+    "test:generate-refs": "node test/generate-reference-data.js",
+    "test:status": "node test/test-status.js",
+    "size": "node scripts/report-size.js"
+  },
+  "keywords": [],
+  "author": "Martin Ericsson",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "wabt": "^1.0.36"
+  }
+}
